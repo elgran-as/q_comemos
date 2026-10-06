@@ -40,3 +40,8 @@ npm run build
 - **Publicación y repositorio:** opcionales; agregá aquí los enlaces de Netlify/Vercel/GitHub cuando publiques el proyecto.
 
 Antes de publicar, reemplazá los nombres de ejemplo del equipo y los datos de contacto/sede por información real.
+
+
+## GitHub Pages
+
+This project is configured for `https://elgran-as.github.io/q_comemos/` using Vite `base` and React Router `basename`. Deployment is handled by `.github/workflows/deploy.yml`.
