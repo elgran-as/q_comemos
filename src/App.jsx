@@ -9,7 +9,11 @@ import Carrito from "./pages/Carrito";
 
 const App = () => {
   return (
+<<<<<<< HEAD
     <BrowserRouter>
+=======
+    <BrowserRouter basename="/q_comemos">
+>>>>>>> d1f52a4 (reparacion)
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
