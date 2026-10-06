@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
 import desarrollo from "../assets/1.png";
@@ -5,11 +6,28 @@ import diseno from "../assets/2.png";
 import contenido from "../assets/3.png";
 
 const Footer = () => {
+  const [now, setNow] = useState(() => new Date());
   const equipo = [
     { nombre: "Integrante 1", rol: "Diseño y experiencia", imagen: diseno },
     { nombre: "Integrante 2", rol: "Desarrollo web", imagen: desarrollo },
     { nombre: "Integrante 3", rol: "Contenido y catálogo", imagen: contenido },
   ];
+
+  useEffect(() => {
+    const intervalId = window.setInterval(() => setNow(new Date()), 1000);
+    return () => window.clearInterval(intervalId);
+  }, []);
+
+  const fechaActual = new Intl.DateTimeFormat("es-AR", {
+    month: "long",
+    year: "numeric",
+  }).format(now);
+  const horaActual = new Intl.DateTimeFormat("es-AR", {
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hourCycle: "h23",
+  }).format(now);
 
   return (
     <footer className="footer">
@@ -23,7 +41,9 @@ const Footer = () => {
         </div>
         <section className="footer-column" aria-labelledby="footer-empresa">
           <h2 id="footer-empresa">La empresa</h2>
-          <p>© 2026 Q´ Comemos. Todos los derechos reservados.</p>
+          <p>
+            © <time dateTime={now.toISOString()}>{fechaActual}, {horaActual}</time> · Q´ Comemos. Todos los derechos reservados.
+          </p>
           <p>Contenido e identidad visual protegidos por propiedad intelectual.</p>
         </section>
         <section className="footer-column" aria-labelledby="footer-contacto">
