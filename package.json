@@ -6,7 +6,7 @@
   "homepage": "https://elgran-as.github.io/q_comemos/",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && node scripts/copy-pages-fallback.js",
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",

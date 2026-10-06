@@ -44,4 +44,4 @@ Antes de publicar, reemplazá los nombres de ejemplo del equipo y los datos de c
 
 ## GitHub Pages
 
-This project is configured for `https://elgran-as.github.io/q_comemos/` using Vite `base` and React Router `basename`. Deployment is handled by `.github/workflows/deploy.yml`.
+This project is configured for `https://elgran-as.github.io/q_comemos/` using Vite `base` and React Router `basename`. Pushes build the app, and pushes to the repository's default branch deploy it with `.github/workflows/deploy.yml`; the build also generates a GitHub Pages fallback so nested app routes continue working on direct visits and refreshes. In the repository, open **Settings → Pages** and select **GitHub Actions** as the build and deployment source.
